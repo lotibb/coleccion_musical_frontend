@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="style.css" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <title>Musicapp</title>
+
+</head>
+<body>
+<div class="container">
+  <header>
+    <h1>Musicapp</h1>
+    <div class="search-bar-container">
+      <div class="search-wrapper">
+        <input type="search" id="searchInput" placeholder="Buscar...">
+      </div>
+      <button id="searchBtn" class="add-btn"><img src="icons/search.png" alt="edit" width="20" height="20"></button>
+      <button class="add-btn" id="addBtn">+</button>
+    </div>
+    <button class="back-btn" id="backBtn">← Volver a artistas</button>
+    <div id="artistName"></div>
+  </header>
+
+  <div id="content">
+    <div class="loading">Cargando...</div>
+  </div>
+</div>
+
+
+<div class="modal" id="artistModal">
+  <div class="modal-content">
+    <h2 id="artistModalTitle">Agregar artista</h2>
+    <form id="artistForm">
+      <input type="hidden" id="artistId">
+      <div class="form-group">
+        <label for="artistNombre">Nombre del artista</label>
+        <input type="text" id="artistNombre" required>
+      </div>
+      <div class="form-group">
+        <label for="artistGenre">Género musical</label>
+        <input type="text" id="artistGenre" required>
+      </div>
+      <div class="form-actions">
+        <button type="button" class="btn btn-secondary" id="cancelArtistBtn">Cancelar</button>
+        <button type="submit" class="btn btn-primary">Guardar</button>
+      </div>
+    </form>
+  </div>
+</div>
+
+
+<div class="modal" id="albumModal">
+  <div class="modal-content">
+    <h2 id="albumModalTitle">Agregar álbum</h2>
+    <form id="albumForm">
+      <input type="hidden" id="albumId">
+      <div class="form-group">
+        <label for="albumTitulo">Titulo de l'album</label>
+        <input type="text" id="albumTitulo" required>
+      </div>
+      <div class="form-group">
+        <label for="albumAnio">Año</label>
+        <input type="number" id="albumAnio" min="1900" max="2025" required>
+      </div>
+      <div class="form-group">
+        <label for="albumArtista">Artista</label>
+        <select id="albumArtista" required></select>
+      </div>
+      <div class="form-actions">
+        <button type="button" class="btn btn-secondary" id="cancelAlbumBtn">Cancelar</button>
+        <button type="submit" class="btn btn-primary">Guardar</button>
+      </div>
+    </form>
+  </div>
+</div>
+<script src="script.js"></script>
+</body>
+</html>
